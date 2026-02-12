@@ -9,6 +9,7 @@ The README provides some info on the topic learning from data provided as open l
 ### key concepts
 
 - perceptron model
+
 Takes attributes (x) and gives different weights (w) and adds in a linear form (e.g sum of x_i*w_i )
 
 $$\left( \sum_{i=1}^d w_i x_i \right)$$
