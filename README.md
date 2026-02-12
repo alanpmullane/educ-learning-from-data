@@ -25,6 +25,10 @@ import numpy as np
 np.sum(w, x)
 ```
 
+- perceptron model hypotheses with bias/threshold w0
+
+$$\left(h(x) = \sum_{i=1}^d w_i x_i - w0\right)$$
+
 ## git repo commands
 
 ### git repo setup and access
