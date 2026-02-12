@@ -27,7 +27,7 @@ np.sum(w, x)
 
 - perceptron model hypotheses with bias/threshold w0
 
-$$h(x) = sign( \left( \sum_{i=1}^d w_i x_i - w0\right) ) = sign( W^T * X )$$
+$$h(x) = sign \left( \sum_{i=1}^d w_i x_i - w0\right)  = sign( W^T * X )$$
 
 ## git repo commands
 
