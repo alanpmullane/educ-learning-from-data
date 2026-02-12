@@ -14,7 +14,7 @@ The README provides some info on the topic learning from data provided as open l
 
 - perceptron model
 
-Takes attributes (x) and gives different weights (w) and adds in a linear form (e.g sum of x_i*w_i )
+Takes attributes (x) and gives different weights (w) and adds in a linear form (e.g sum of x_i*w_i ) and data is linearly separable (two classes of the data separable by a straight line, e.g movie ratings with positive vs negative rating, credit approval with approved or not approved, etc).
 
 $$\left( \sum_{i=1}^d w_i x_i \right)$$
 
