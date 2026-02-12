@@ -2,7 +2,11 @@
 
 ## Overview
 
-The README provides some info on the topic learning from data provided as open learning from Prof. Abu Mostafa of Caltech Univ
+The README provides some info on the topic learning from data provided as open learning from Prof. Abu Mostafa of Caltech Univ.
+
+### References
+- Caltech course for Learning from Data: https://work.caltech.edu/telecourse.html
+- Youtube playlist for Learning from Data: https://www.youtube.com/playlist?list=PLD63A284B7615313A
 
 ## Details
 
