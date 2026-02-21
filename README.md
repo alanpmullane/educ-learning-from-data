@@ -43,6 +43,13 @@ np.sum(w, x)
 
 A system for automating process of learning an outcome from a learning problem and an input data set where a pattern exists in the data.
 
+- in-sample error
+
+Probability an item selected in sample set is incorrect
+
+- out-of-sample error
+
+Probability that item selected in data set outside of the sample set is incorrect
 
 - hypotheses set
 
@@ -62,6 +69,56 @@ $$h(x) = sign \left( \sum_{i=1}^d w_i x_i + w0\right) = sign \left( \sum_{i=0}^d
 
 $W^T * X$ represents the transpose of weights times input data set X and in python can be represented easily using numpy arrays and numpy functions.
 
+
+
+- hoeffding inequality
+
+It is a simple bound that as the sample size N grows, is exponentially unlikely that in-sample error ($E_{in}(h)$ or $\nu$) will deviate from the out-of-sample error ($E_{out}(h)$ or $\mu$) by more than positive tolearnce value $\epsilon$...
+
+$$P[|\nu - \mu| > \epsilon] <= 2e^{-2e^{2}N}$$
+
+This can also be represented as follows:
+
+$$P[|E_{in}(h) - E_{out}(h)| > \epsilon] <= 2e^{-2e^{2}N}$$
+
+Also, in-sample error and out-of-sample error can be expressed as follows: 
+
+$$E_{in}(h) = 1/N \left( \sum_{n=1}^N [ h(X_n) \neq f(X_n) ] \right)$$
+
+$$E_{out}(h) = P[h(x) \neq f(x)]$$
+
+
+- predicting from multiple hypotheses
+
+The previous heoffding inequality deals with a single hypotheses, h(x) but we will in general have multple hypotheses to choose an optimal function, g(x). We can use the following two rules to represent heofffding inequality for M hypotheses to settle on a single hypotheses g(x) to aproximate the target function f(x) as follows...
+
+1. given an event B1 and B2, if B1 implies B2 then P[B1] <= P[B2]
+2. Using the union bound, P[B1 or B2] <= P[B1] + P[B2] 
+
+- generalisation error
+
+With the previous two rules, we can approximate hoeffding inequality for g with the following.
+
+$$P[|E_{in}(g) - E_{out}(g)| > \epsilon] <= 2Me^{-2e^{2}N}$$
+
+M is a measure of complexity of the selected hypotheses function, g(x).
+
+- Error measure
+
+The error measure is a measure of how well the selected hypotheses function, g(x) approximates the target function f(x) and it is expected that there will be some small error but that it should be as small as possible.
+
+$$Error = E(h, f)$$
+
+
+- generalisation bound
+
+Given a tolerance $\delta$ we can equate out-of-sample error to in-sample error for g(x) as follows...
+
+$$E_{out}(g) <= E_{in}(g) + \sqrt( \frac{1}{2N}ln\frac{2M}{\delta})$$
+
+- general supervised learning problem
+
+![educ-learning-from-data-sup-learn-prob](./images/diag-1.png)
 
 ## git repo commands
 

@@ -1,0 +1,9 @@
+flowchart TD
+    A["Unknown target distribution, P(y|x)"] --> B["Training Examples, (x, y)"];
+    A1["Unknown input distribution, P(x)"] -- x1,x2,..,xN --> B;
+    B --> C[Learning Algorithm, A];
+    E["Hypotheses set, H"] --> C;
+    A1 -- x --> D["Final hypothesis, g"];
+    C --> D;
+    F["Error measure"] --> C;
+    F --> D;
